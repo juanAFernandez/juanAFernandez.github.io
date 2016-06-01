@@ -4,10 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<title>Servidores - Hardware y Mantenimiento</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -34,25 +31,6 @@
 		<![endif]-->
 	</head>
 
-
- <!--
- -pequeña introducción
-
- -marcas más importantes dentro de los servidores
-
- -decisión de el recorrido por los servidores proliant de hp
-
-
- -mantenimiento hardware (detección de fallos por visualización de indicadores)
-
- -mantenimiento hardware apoyado por software (tecnologías de detección de errores en hardware, monitoreo)
-
-
-	-un poco de CPDs, como se distribuyen y construye,
-
--->
-
-
 	<body>
 
 		<div class="reveal">
@@ -63,485 +41,565 @@
 					<h1>Servidores</h1>
 					<h3>Hardware y mantenimiento</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Juan A. Fernández</a> / <a href="http://twitter.com/hakimel">@sinclair_88</a></small>
+						<small>Created by <a href="https://github.com/juanAFernandez">Juan A. Fernández</a> / <a href="http://twitter.com/hakimel">@sinclair_88</a></small>
 					</p>
 				</section>
 
+      <!--0. Conceptos clave-->
+			<section>
+				  <section>
+						<h2>Conceptos</h2>
+					</section>
+					<section>
+						<a href="https://es.wikipedia.org/wiki/Servidor#V.C3.A9ase_tambi.C3.A9n"><h3>Servidor</h3></a>
+						<p class="fragment">Servidor +- = ordenador convencional</p>
+						<small><p class="fragment">Aunque puede ser cualquier equipo hacemos referencia a máquinas muy específicas con:</p></small>
+						<ul>
+							<li class="fragment">Hardware más preciso.</li>
+							<li class="fragment">Mayor capacidad de procesamiento y almacenamiento.</li>
+							<li class="fragment">Sustitución en caliente.</li>
+						</ul>
+					</section>
+					<section>
+						<a href="https://en.wikipedia.org/wiki/Standalone_software"><h3>Not StandAlone</h3></a>
+						<p class="fragment">Granja</p>
+						<small><p class="fragment">Es inusual tener un servidor trabajando sin equipos con quien interactuar.</p></small>
+						<ul>
+							<li class="fragment">Routers / switches</li>
+							<li class="fragment"><a href="https://es.wikipedia.org/wiki/Cortafuegos_(inform%C3%A1tica)">Firewalls</a></li>
+							<li class="fragment">Otros servidores</li>
+							<li class="fragment">Equipos auxiliares</li>
+						</ul>
+					</section>
+					<section>
+						<a href="https://en.wikipedia.org/wiki/Standalone_software"><h3>Clasificación</h3></a>
+						<p class="fragment">Realmente "no existe"</p>
+						<small><p class="fragment">Cualquier servidor es una ordenador "grande" que ejecuta algún tipo de software, sea:</p></small>
+						<ul>
+							<li class="fragment">Un servidor web (<a href="https://es.wikipedia.org/wiki/Servidor_HTTP_Apache">Apache</a>, <a href="https://es.wikipedia.org/wiki/Nginx">Nginx</a>, <a href="http://www.nodebeginner.org/index-es.html">Node</a>, etc... )</li>
+							<li class="fragment">Servicios (BD, Video, etc...)</li>
+							<li class="fragment">Acceso a recursos (RAID, Impresión, Red, <br>Telefonía (<a href="http://www.asterisk.org/">Asterisk</a>), etc...)</li>
+							<li class="fragment">Hardware de cualquier tipo, (Arduino, p.e.).</li>
+						</ul>
+					</section>
+
+			</section>
+
+			  <!-- 1. Principales Marcas -->
 				<section>
-					<h2>HP Proliant</h2>
-					<h4>Compaq + Hewlett-Pack</h4>
+					<section>
+						<h2>Principales marcas</h2>
+					</section>
+					<section>
+						<h3>HP</h3>
+						<a class="fragment" href="http://www8.hp.com/es/es/products/proliant-servers/index.html#!view=grid&page=1&facet=ProLiant-ML-Tower"><h2>Prolian</h2></a>
+					</section>
+					<section>
+						<h3>Dell</h3>
+						<a class="fragment" href="http://www.dell.com/us/business/p/servers"><h2>Power Edge</h2></a>
+					</section>
+					<section>
+						<h3>IBM</h3>
+						<a class="fragment" href="http://www-03.ibm.com/systems/power/hardware/"><h2>Power System</h2></a>
+					</section>
+					<section>
+						<h3>Cisco</h3>
+						<a class="fragment" href="http://www.cisco.com/c/en/us/products/servers-unified-computing/index.html"><h2>Unified Computing System</h2></a>
+					</section>
+					<section>
+						<h3>Oracle / Sun Microsystems (2010)</h3>
+						<a class="fragment" href="https://www.oracle.com/servers/products.html#sparc"><h2>SPARC</h2></a>
+					</section>
+					<section>
+						<h3>Fujitsu</h3>
+						<a class="fragment" href="http://www.fujitsu.com/es/products/computing/servers/"><h2>Primergy</h2></a>
+					</section>
+					<section>
+						<h3>NEC</h3>
+						<a class="fragment" href="https://www.necam.com/servers/"><h2>Express5800</h2></a>
+					</section>
+					<section>
+						<h3>Acer</h3>
+						<a class="fragment" href="http://www.acer.com/ac/en/US/content/professional-group/servers"><h2>AT/AR</h2></a>
+					</section>
+					<section>
+						<h3>Lenovo</h3>
+						<a class="fragment" href="http://shop.lenovo.com/us/en/systems/servers/racks/"><h2>x Series ThinkServer</h2></a>
+					</section>
 
-					<h4>Gen9</h4>
-					<p>
-					Intel® Xeon® Processor E5-4669 v3
-					(45M Cache, 2.10 GHz)
-				</p>
-
-					<ol>
-						<li>ML: torre</li>
-						<li>DL: rack</li>
-						<li>BL: blade</li>
-						<li>SL: alta densidad</li>
-					</ol>
-
-					<p>
-					Intel Xeon E5-2600v3
-					HP DDR4 SmartMemory
-					</p>
-
-
-
-
-
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
+					<section>
+						<h2>Comparativas</h2>
+					</section>
+					<section>
+						<h4>2008</h4>
+						<a href="http://www.itjungle.com/tfh/tfh060208-story03.html"> <img width="800" height="600" src="comparativa2008.gif"></a>
+					</section>
+					<section>
+						<h4>2013</h4>
+						<a href="http://www.digitimes.com/news/a20160401RS400.html"><img width="800" height="600" src="comparativa2.png"></a>
+					</section>
+					<section>
+						<h4>2012-2016</h4>
+						<a href="http://marketrealist.com/2014/04/enterprise-group-services-software/"><img width="800" height="600" src="comparativa3.jpg"></a>
+					</section>
 				</section>
 
 
+				<!--2.  HP -->
+				<section>
+
+					<section>
+						<a href="https://es.wikipedia.org/wiki/Hewlett-Packard"><h2>Hewlett-Packard</h2></a>
+					</section>
+					<section>
+						<a href="https://es.wikipedia.org/wiki/Hewlett-Packard"><h2>Hewlett-Packard</h2></a>
+						<h4>Se funda en 1939</h4>
+						<small><h4 class="fragment">Bill Hewlett & David Packard</h4></small>
+						<h4 class="fragment">2002 Compaq</h4>
+						<h4 class="fragment">2008 EDS (USA Info. Services)</h4>
+						<h4 class="fragment">2009 3Com</h4>
+						<h4 class="fragment">2010 Palm Inc.</h4>
+						<h4 class="fragment">400.000 empleados aprox.</h4>
+					</section>
+
+					<section>
+						<a href="https://en.wikipedia.org/wiki/ProLiant"><h2>HP Proliant</h2></a>
+					</section>
+
+					<section>
+						<h3> Gen 9 </h3>
+						<ol>
+							<li class="fragment">ML: torre</li>
+							<li class="fragment">DL: rack</li>
+							<li class="fragment">BL: blade</li>
+							<li class="fragment">SL: alta densidad</li>
+						</ol>
+					</section>
+
+					<section>
+						<h2><a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-ML-Tower">ML</a></h2>
+						<h3 class="fragment">Servidores de Torre</h3>
+						<h4 class="fragment"><a href="https://www.youtube.com/watch?v=-Zy0IEAlg1M">ML350</a> Gen 9 Series</h4>
+						<img class="fragment" width="300" height="238" data-src="ml350.png" alt="Down arrow">
+						<img class="fragment" width="300" height="238" data-src="ml350back.png" alt="Down arrow">
+						<img class="fragment" width="300" height="238" data-src="ml350inside.jpg" alt="Down arrow">
+					</section>
+
+					<section>
+						<h4><a href="http://www8.hp.com/es/es/products/proliant-servers/product-detail.html?oid=7062807">ML350 Gen9 2xE5-2650v3</a></h4>
+						<!--Características -->
+						<small class="fragment">2 <strong>Intel Xeon Ten-Core E5-2650v3</strong> - 2.3GHz, 25MB L3 Cache</small>
+						<small class="fragment">32GB , max 384 GB 1.5 TB usando LRDIMM máximo (DDR4-SDRAM)</small>
+						<small class="fragment">8 unidades de disco SATA o SAS SFF de 2.5</small>
+						<small class="fragment">Controladora RAID 0, 1, 5, 10 hardware</small>
+						<small class="fragment">Soporte adicional para SAS de 12 GB/s</small>
+						<br>
+						<small class="fragment">Fuente de alimentación redundada 2 x 800W</small>
+						<br>
+						<small class="fragment">Tarjeta de red integrada de cuatro (4) puertos de 1Gb – HP 331i</small>
+						<!-- + Características -->
+						<small class="fragment">Garantía 3/3/3</small>
+						<br>
+						<small class="fragment">Notificación de <a href="http://www8.hp.com/es/es/products/server-software/product-detail.html?oid=489496">SIM (Systems Insight Manager)</a>en procesadores, memoria y discos duros</small>
+						<small class="fragment">ENERGY STAR®</small>
+						<small class="fragment">30 kg</small>
+						<p class="fragment"><a href="http://www.mercadoactual.es/ordenadores/servidores-racks/servidores/hp-proliant-ml350-gen9-765822-421-1061093.html?colabG=2&gclid=Cj0KEQjwvOC5BRCb_8yNmZ_ls9IBEiQACTz8vkH0tvjHy7_mglpvmONR9jFuOteq_ZZSJ9iOeM6uCkAaAunz8P8HAQ">5.074,59€</a></p>
+
+
+					</section>
+
+
+					<section>
+						<h2><a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-DL-Rack">DL</a></h2>
+						<h3 class="fragment">Servidores de Rack</h3>
+						<h4 class="fragment"><a href="https://www.youtube.com/watch?v=8wLBm9CQoRk">DL580</a> Gen 9 Series</h4>
+						<img class="fragment" width="300" height="238" data-src="dl580.png" alt="Down arrow">
+						<img class="fragment" width="300" height="238" data-src="dl580back.png" alt="Down arrow">
+						<img class="fragment" width="300" height="238" data-src="ml350inside.jpg" alt="Down arrow">
+					</section>
+
+					<section>
+						<h4><a href="http://www8.hp.com/es/es/products/proliant-servers/product-detail.html?oid=8090155">DL580 Gen 9 E7-4850v3</a></h4>
+
+						<small class="fragment">4 Intel® Xeon® E7-4850 v3 (14 núcleos, 2,2 GHz, 35 MB, 115 w)</small>
+						<small class="fragment">Fuente de alimentación 4 x 1200W</small>
+						<small class="fragment"> 6 TB Memoria máxima 48 ranuras DIMM DDR4 Smart Memory </small>
+						<small class="fragment">Controladora RAID Smart Array <a href="http://www8.hp.com/bo/es/products/iss-controllers/product-detail.html?oid=6259422#!tab=specs">P830i/FBWC</a> de 4 GB</small>
+						<small class="fragment">Hasta (10) tarjetas de red iLO dedicadas a la gestión SAS/SATA/SSD SFF</small>
+						<br>
+						<small class="fragment">Garantía 3/3/3</small>
+						<br>
+						<small class="fragment">52,8 kg</small>
+						<br>
+						<p class="fragment"><a href="http://www.uk.insight.com/en-gb/productinfo/servers/0004530097">8.000€ aprox</a></p>
+					</section>
+
+
+					<section>
+						<h2><a href="http://www8.hp.com/es/es/products/proliant-servers/index.html?facet=ProLiant-BL-Blade">BL</a></h2>
+						<h3 class="fragment">Servidores Blade</h3>
+					  <h4 class="fragment"><a href="http://www8.hp.com/es/es/products/proliant-servers/product-detail.html?oid=7271227">BL460c</a> Gen 9 Series</h4>
+						<small class="fragment">Multiproposito / video, aprovechamiento espacio.</small>
+						<br>
+						<img class="fragment" width="300" height="238" data-src="blade1.png" alt="Down arrow">
+						<img class="fragment" width="500" height="238" data-src="blade2.png" alt="Down arrow">
+
+					</section>
+
+
+					<section>
+						<h4><a href="http://www8.hp.com/es/es/products/proliant-servers/product-detail.html?oid=7271227">BL460c Gen9</a></h4>
+
+						<small class="fragment">1 o 2 Intel® Xeon® E5-2600 v3/v4</small>
+						<br>
+						<small class="fragment">Sólo 2 ranuras de expansión</small>
+						<br>
+						<small class="fragment">10GibE</small>
+						<br>
+						<small class="fragment">Controladora RAID B120i SATA <a href="http://www8.hp.com/bo/es/products/iss-controllers/product-detail.html?oid=6259422#!tab=specs">P830i/FBWC</a> de 4 GB</small>
+						<br>
+						<small class="fragment">Máx 2TB ram con 128GB DIMMs (Enero 2016), 16 ranuras <a href="http://www.hp.com/hpinfo/newsroom/press_kits/2014/ComputeEra/HP_DDR4_SmartMemory_DataSheet.pdf">DDR4 Smart Memory</a></small>
+						<br>
+						<p class="fragment"><a href="http://www.uk.insight.com/en-gb/productinfo/servers/0003748261">2.000€ aprox</a>
+						<br>
+					  </p>
+
+					</section>
+
+
+
+
+
+
+					<section>
+						<h2><a href="http://www8.hp.com/us/en/products/proliant-servers/index.html#!view=grid&page=1&facet=ProLiant-SL-Scalable">SL</a></h2>
+					  <h3 class="fragment">Servidores de Rack (Nodos- Scalable)</h3>
+						<small class="fragment">Procesamiento distribuido, cálculo, Hadoop, Big Data </small>
+						<h4 class="fragment">SL4540 <strong>Gen8</strong></h3>
+						<img class="fragment" width="300" height="238" data-src="SL4540.png" alt="Down arrow">
+						<img class="fragment" width="500" height="238" data-src="SL4540proc.png" alt="Down arrow">
+						<small class="fragment">Usados en los Storage Clusters de <a href="https://www.redhat.com/es/resources/red-hat-gluster-storage-hp-proliant-sl4540-gen8-server"> Red Hat </a></small>
+					</section>
+
+
+					<section>
+						<h4><a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611040">SL4540 Gen8</a></h4>
+
+						<small class="fragment">4 Intel® Xeon® <a href="http://ark.intel.com/products/75266/Intel-Xeon-Processor-E5-2470-v2-25M-Cache-2_40-GHz">E5-2470 v2 (DecaCore, 2,5 GHz-3.20Ghz</a>, <a href="https://es.wikipedia.org/wiki/Intel_QuickPath_Interconnect" >8GTs QuickPath BUS</a> 25 MB L3, 115 w)</small>
+						<small class="fragment">Hot-plug LFF SAS, SATA, SATA SSD para 3.5 y 2.5</small>
+						<small class="fragment">Controladora RAID B120i SATA <a href="http://www8.hp.com/bo/es/products/iss-controllers/product-detail.html?oid=6259422#!tab=specs">P830i/FBWC</a> de 4 GB</small>
+						<br>
+						<small class="fragment"> HP Ethernet 10 Gb 2P 544i Adapter</small>
+						<small class="fragment">Alimentacion redundante x 4 750W/1200W 94% efficiency</small>
+						<br>
+						<small class="fragment">Garantía 1/1/1  (Debido al desgaste)</small>
+						<br>
+						<small class="fragment">100 kg aprox.</small>
+						<br>
+						<p class="fragment"><a href="https://www.frontierpc.com/computers/entry-level-servers/hp/proliant-sl4540-g8/proliant-3xsl4540-gen8-1g-mezz-hba-server-748409-001-1026836264.html">7.000€ aprox</a>
+						<br>
+						<small>(3 decacore E5-2470v2 = 30nodos x 2 hebras= 60 hebras com 1/2 rack) , conf. standar)</small>
+					  </p>
+
+					</section>
+
+				</section>
+
+				<!--2.1 CSIRC-->
+				<section>
+
+					<section>
+						<h2>Supercomputación <strong>CSIRC-UGR</strong></h2>
+					</section>
+					<section>
+				    <h3 class="fragment">UGRGRID</h3>
+						<small><p class="fragment">Sun Fire X2200 M2/X4600 M2 con 1264 núcleos, un total de 3 TByte de memoria RAM, 24 TByte de almacenamiento e interconectado a través de una red Infiniband de alto rendimiento.</p></small>
+
+				    <h3 class="fragment">ALHAMBRA</h3>
+						<small><p class="fragment">HPC Fujitsu PRIMERGY CX250/RX350/RX500 con 1808 núcleos (3616 hebras en total), 4,28 TByte de memoria RAM, 72 TByte de almacenamiento compartido e interconexión Infiniband QDR, que alcanza aprox. los 38 TFlop/s.</p></small>
+					</section>
+
+					<section>
+						<img width="300" height="600"src="cpd1.jpg">
+						<img class="fragment" width="300" height="600"src="cpd2.jpg">
+						<img class="fragment" width="300" height="600"src="cpd3.jpg">
+					</section>
+
+					<section>
+						<img width="300" height="600"src="cpd4.jpg">
+						<img class="fragment" width="300" height="600"src="cpd5.jpg">
+						<img class="fragment" width="300" height="600"src="cpd6.jpg">
+					</section>
+					<section>
+						<img width="300" height="600"src="cpd7.jpg">
+					</section>
+
+				</section>
+
+				<!-- 3. Sección de normativa -->
 				<section>
 					<section>
-						<h2>Indicadores visuales (HP)</h2>
-						<p>
-						•
-						System power LED
-						•
-						Health LED
-						•
-						NIC LED
-						•
-						UID LED
-					</p>
-					</section>
-					<section>
-						<p>
-						Health status LED bar definitions (blades only)
-						HPE ProLiant Gen8 and later server blades have a health status LED bar with the
-						following status
-						definitions:
-						•
-						Solid Green = Normal
-						•
-						Flashing Green = Power On/Standby Button service is being initialized.
-						•
-						Flashing Amber = Degraded condition
-						•
-						Flashing Red = Critical condition
-					</p>
+						<h2>Niveles de disponibilidad</h2>
 					</section>
 
 					<section>
-						<h5>Front panel LED power fault codes</h5>
+					  <h3><a href="https://en.wikipedia.org/wiki/High_availability">Disponibilidad estándar</a></h3>
+						<table class="fragment" style="font-size: 70%" >
+							<thead><tr><th>Nivel</th><th>Tiempo fuera de servicio por año</th></tr></thead>
+							<tbody>
+								<tr class="fragment"><td>90%</td><td>36,5 días</td></tr>
+								<tr class="fragment"><td>95%</td><td>18,25 días</td></tr>
+								<tr class="fragment"><td>99%</td><td>3,65 días</td></tr>
+								<tr class="fragment"><td>99,9%</td><td>8,76 horas</td></tr>
+								<tr class="fragment"><td>99,99%</td><td>50 minutos</td></tr>
+								<tr class="fragment"><td>99,999%</td><td>5 minutos</td></tr>
+								<tr class="fragment"><td><strong>99,9999999%</strong></td><td><strong>31.55 milisegundos</strong></td></tr>
+							</tbody>
+						</table>
+						<a class="fragments" href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44686.pdf"><small>High-Availability at Massive Scale Google's Data Infrastructure for Ads (99.9%)</small></a>
+					</section>
 
-						More in: http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c04444029
-						http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c04444029
-						http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c04443553
-						http://www8.hp.com/es/es/products/proliant-servers/product-detail.html?oid=7398895
-
-						<p>The number of flashes in each sequence corresponds to the subsystem impacted by the power fault</p>
-
-						<table style="font-size: 70%" >
-							<thead>
+					<section>
+						<h3>Uptime Institute <strong>TIER</strong></h3>
+						<h5 class="fragment">
+						<a href="http://www.ieee802.org/3/hssg/public/nov06/diminico_01_1106.pdf">ANSI/</a>
+						<a href="http://www.tia-942.org/content/162/289/About_Data_Centers">TIA-942</a>
+					  </h5>
+						<table style="font-size: 70%" id="fragments5" >
+							<thead class="fragment">
 								<tr>
-									<th>Subsystem</th>
-									<th>Flashes</th>
+									<th>Nivel</th>
+									<th>Disponibilidad</th>
 								</tr>
 							</thead>
-							<tbody>
-
-								<tr>
-									<td>System Board</td>
-									<td>1</td>
+							<tbody >
+								<tr class="fragment">
+									<td>TIER I</td>
+									<td>99,67% 28,8 horas de interrupción al año. Sin redundancia
+									Componentes sin capacidad redundante (ejemplo 1 sola UPS o 1 solo proveedor de datos).</td>
+								</tr>
+								<tr class="fragment">
+									<td>TIER II</td>
+									<td>99,75% 22 horas de interrupción al año. Redundancia parcial.
+									Dispositivos con componentes redundantes. </td>
 								</tr>
 
-								<tr>
-									<td>Processor</td>
-									<td>2</td>
+								<tr class="fragment">
+									<td>TIER III</td>
+									<td>99,982% 1,6 horas de interrupción al año.
+									Equipos de alimentación eléctrica dual y varios enlaces de salida.</td>
 								</tr>
 
-								<tr>
-									<td>Memory</td>
-									<td>3</td>
+								<tr class="fragment">
+									<td>TIER IV</td>
+									<td>99,995% 0,8 horas de interrupción al año.
+									Todos los componentes son completamente tolerante a fallos incluyendo enlaces de datos, almacenamiento, aire acondicionado, energía eléctrica, etc
+									Todo lo que es servidores tiene alimentación dual.</td>
 								</tr>
-
-								<tr>
-									<td>Riser board PCIe slots</td>
-									<td>4</td>
-								</tr>
-
-								<tr>
-									<td>FlexibleLOM</td>
-									<td>5</td>
-								</tr>
-
-								<tr>
-									<td>Removable HPE Flexible Smart Array
-											controller/Smart SAS HBA controller</td>
-									<td>6</td>
-								</tr>
-
-								<tr>
-									<td>System board PCIe slots</td>
-									<td>7</td>
-								</tr>
-
-								<tr>
-									<td>Power backplane or storage backplane</td>
-									<td>8</td>
-								</tr>
-
-								<tr>
-									<td>Power supply</td>
-									<td>9</td>
-								</tr>
-
 
 							</tbody>
 						</table>
 
 					</section>
-
-
-				</section>
-
-
-
-				<!-- Example of nested vertical slides -->
-				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h3><a href="http://www.idc.com/research/viewtoc.jsp?containerId=250565">IDC</a></h3>
+							<table style="font-size: 70%" id="fragments5" >
+								<thead class="fragment"><tr><th>Nivel</th><th>Tolerancia</th></tr></thead>
+								<tbody >
+									<tr class="fragment"><td>AL0</td><td>Servicios no garantizados.</td></tr>
+									<tr class="fragment"><td>AL1</td><td>Garantizado solo pequeños fallos y pérdida de datos leve.</td></tr>
+									<tr class="fragment"><td>AL2</td><td>Supervivencia a fallos de forma transparente.</td></tr>
+									<tr class="fragment"><td>AL3</td><td>Pequeño delay en el peor de los casos.</td></tr>
+									<tr class="fragment"><td>AL4</td><td>Servicios totalmente garantizados, sin delay ni perdida de datos.</td></tr>
+								</tbody>
+							</table>
+
 					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+
+				</section>
+
+
+
+				<!-- 4. Seccción de herramientas de monitoreo -->
+				<section>
+
+					<section  id="fragments2">
+						<h2>Sistemas de monitorización</h2>
 					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						<section>
+							<h3>Indicadores visuales (HP Standar)</h3>
 						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+						<section>
+							<ul>
+								<li>
+									<p>System power LED <small>(Alimentación del sistema)</small></p>
+									<small>
+									 	<p class="fragment">Activo (verde) - Standby (ambar)</p>
+										<p class="fragment">Ajuste potencia (1Hz verde)</p>
+									</small>
+								</li>
+								<li class="fragment">
+									<p>Health LED <small>(Estado del sistema)</small></p>
+									<small>
+										<p class="fragment">Normal (verde)</p>
+										<p class="fragment">Sistema degradado(flash ambar)</p>
+										<p class="fragment">Sistema crítico (1Hz rojo)</p>
+										<p class="fragment">Sistema no operativo (bios level, agoniza), (4Hz rojo)</p>
+										<br>
+									</small>
+								</li>
+							</ul>
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
+							<ul>
+								<li>
+										<p>NIC LED <small>(Estado de tarjeta RED)</small></p>
+									<small>
+										<p class="fragment">Conectado a la red(verde)</p>
+										<p class="fragment">Red activa (1Hz verde)</p>
+										<p class="fragment">Desconectado (apagado)</p>
+									</small>
+								</li>
+								<li class="fragment">
+									<p>UID LED</p>
+									<small>
+										<p class="fragment">Administración remota o actualización de firmware (1Hz azul)</p>
+									</small>
+								</li>
+							</ul>
+						</section>
+						<section>
+							<h4>Ejemplo</h4>
+							<img width="700" height="400"src="leds.jpeg">
+						</section>
+
+
+					<section>
+						<h3>Monitorización RAM</h3>
+						<p class="fragment"><a href="http://www.thegeekstuff.com/2008/06/how-to-diagnose-memory-hardware-issues-on-dell-servers/">Ram Equipo DELL (arcaico, con CDs)</a></p>
 					</section>
-				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
+					<section >
+						<h3>Monitorización Hardware</h3>
+						<p class="fragment"><a href="http://www.emersonnetworkpower.com/en-US/Products/InfrastructureManagement/DataCenterMonitoringandAccess/Pages/default.aspx">Emerson Network Power</a></p>
+					</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+					<section>
+						<h3>Externos al hardware</h3>
+						<p class="fragment"><a href="http://www.itwatchdogs.com/data-center-environment-monitors-s1.html">ITWatchDogs Monitors</a>
+							with <a href="http://www.geistglobal.com/products/monitor"> GEIST </a>
 						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+
+					<section>
+						<h3>Soluciones mixtas</h3>
+						<p class="fragment"><a href="http://www.emersonnetworkpower.com/en-US/Products/InfrastructureManagement/DataCenterMonitoringandAccess/Pages/default.aspx">Emerson Network Power</a></p>
+						<p class="fragment"><a href="http://www.deltapowersolutions.com/en/mcis/data-center-environment-management-system.php">Delta</a></p>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+
+					<section>
+						<h3>BMC & IPMI</3>
 					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+
+					<section>
+						<h3><a href="https://en.wikipedia.org/wiki/BMC">BMC</a></h3>
+						<small>
+							<p class="fragment">Procesador especializado para monitorear el estado físico del equipo de forma paralela a su funcionamiento.</p>
+							<p class="fragment">Crea la interfaz entre el software y el hardware</p>
+							<p class="fragment">"Inteligencia en la arquitectua IPMI"</p>
+						</small>
+					</section>
+					<section>
+						<h3><a href="https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface">IPMI</a></h3>
+						<small>
+							<p class="fragment">Interfaz basada en el paso de mensajes</p>
+							<p class="fragment">Opera de forma independiente al SO, por eso funciona: antes de que arranque, cuando está apagado y después de un fallo (entre otros escenarios)</p>
+							<p class="fragment">Intel 1998</p>
+							<p class="fragment">Más de 200 empresas lo usan, Cisco, Dell, HP, NEC, SuperMicro, etc...</p>
+							<p class="fragment">BMC es parte de IPMI y suele estar presente en la placa base</p>
+							<p class="fragment">El sistema IPMI puede añadirse si no se encuentra disponible</p>
+							<p class="fragment"><a href="https://docs.oracle.com/cd/E19121-01/sf.v20z/817-5249-17/chapter2.html">Oracle Docs about IPMI</a></p>
+					</small>
+					</section>
+
+					<section>
+						<img width="800" height="600" src="IPMI.png">
+					</section>
+					<section>
+						<img width="800" height="600" src="board.gif">
+					</section>
+
+					<section>
+						<p>Hay muchas más soluciones</p>
+						<p class="fragment">Casi cada fabricante añade una capa de abstracción <small>(UI-Intel)</small></p>
+					</section>
+
+
+				</section>
+
+
+				<!--5. Sección de desastres en datacenter -->
+				<section>
+
+					<section data-background="fire.gif">
 						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						<h2>Data center disasters</h2>
 						</div>
 					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<!--Sección de desastres en datacenter -->
-				<section>
-					<section>
-					<h2>Data center disasters</h2>
-						<ul>
-							<li>Right-to-left support</li>
-							<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-							<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-							<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-							<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-						</ul>
-					</section>
 					<section  style="text-align: left;">
-					<h3>AT&T Network 1990</h3>
-					<p>Una de las mayores compañías de telecomunicaciones del mundo.</p>
-					<p>En 1925 crea los laboratorios Bell, 1967 entra Dennis Ritchie (C), crean Unix.</p>
-					<p>Redirecciona alrededor de 115 millones de llamadas al día. </p>
-					<p>Red de 114 switches distribuidos a través de Estados Unidos.</p>
-						<ul>
-							<li>Right-to-left support</li>
-							<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-							<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-							<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-							<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-						</ul>
+						<h3><a href="https://es.wikipedia.org/wiki/AT%26T_Mobility">AT&T Network</a> 1990</h3>
+						<p class="fragment">Una de las mayores compañías de telecomunicaciones del mundo.</p>
+						<p class="fragment">En 1925 crea los <a href="https://en.wikipedia.org/wiki/Bell_Labs">laboratorios Bell</a>, 1967 entra <a href="https://es.wikipedia.org/wiki/Dennis_Ritchie"> Dennis Ritchie </a> (C), crean Unix.</p>
+						<p class="fragment">Redirecciona alrededor de 115 millones de llamadas al día. </p>
+						<p class="fragment">Red de 114 switches distribuidos a través de Estados Unidos.</p>
 					</section>
+
+
+					<section  style="text-align: left;">
+						<p>Una <a href="http://users.csc.calpoly.edu/~jdalbey/SWE/Papers/att_collapse.html"> actualización </a>del código C de los switches para la aceleración de un proceso.</p>
+						<p class="fragment">Una fallo en un break dentro en un bucle while.</p>
+						<p class="fragment">75 millones de llamadas bloqueadas.</p>
+						<p class="fragment">200.000 ventas de billetes de avión perdidas (entre otras cosas).</p>
+					</section>
+
+					<section  style="text-align: left;">
+						<h3><a href="http://www.datacenterknowledge.com/archives/2014/04/20/data-center-fire-leads-outage-samsung-devices/">Samsung Data Center Gwacheon</a> 2014</h3>
+						<img class="fragment" src="samsung.jpg">
+					</section>
+
+					<section>
+						<h3>Estudio de causas de corte de servicio en US</h3>
+						<a href="http://www.emersonnetworkpower.com/documentation/en-us/brands/liebert/documents/white%20papers/2013_emerson_data_center_outages_sl-24679.pdf">2013 Study on
+Data Center Outages</a>
+					</section>
+
+					<section>
+						<img width="900" height="600" src="estudioA.png">
+					</section>
+					<section>
+						<img width="900" height="600" src="estudioB.png">
+					</section>
+					<section>
+						<img width="900" height="600" src="estudioC.png">
+					</section>
+
 				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+					<section data-background-video="HPPOD.mp4" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h1>THE END</h1>
+							<h3 class="fragment" >Questions?</h3>
+						</div>
+					</section>
+
 				</section>
+
+
+
 
 			</div>
 

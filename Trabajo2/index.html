@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Open Stack. A brief introduction.</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+
+
+	<body>
+
+		<div class="reveal">
+
+
+			<div class="slides">
+
+				<!-- Título -->
+				<section>
+					<h1>Open Stack</h1>
+					<h4>Open Source Cloud Computing Software</h4>
+					<p>
+						<small>by <a href="https://github.com/juanAFernandez">Juan A. Fernández</a> / <a href="http://twitter.com/hakimel">@sinclair_88</a></small>
+					</p>
+				</section>
+
+				<!--Recordatorio de IV -->
+				<section>
+
+					<section>
+
+						<h2>Cloud Computing</h2>
+
+					</section>
+
+					<section>
+						<h2>SaaS</h2>
+						<h3>Software As a Service</h3>
+						Google Drive
+						Zoho
+						Office365
+					</section>
+
+					<section>
+						<h2>PaaS</h2>
+						<h3>Platform As a Service</h3>
+						Google App Engine
+						OpenShift
+					</section>
+
+					<section>
+						<h2>IaaS</h2>
+						<h3>Infrastructure As a Service</h3>
+						Amazon EC2
+						Microsoft Azure
+						Google Compute Engine
+					</section>
+
+					<section>
+						<h2>Microservicios</h2>
+						<a class="fragment" href="http://microservices.io/index.html"><h4>microservices.io</h4></a>
+						<br>
+						<a class="fragment" href="http://martinfowler.com/">Martin Fowler</a>
+					</section>
+
+					<section>
+						<a href="https://es.wikipedia.org/wiki/DevOps"><h2>DevOps</h2></a>
+						<p class="fragment">Integración entre desarrollo, hardware y orquestación</p>
+
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<h2>¿Qué es Open Stack?</h2>
+						<p class="fragment">Software para la construcción de nubes publicas / privadas.</p>
+						<strong class="fragment">IaaS + PaaS</strong>
+					</section>
+
+					<section>
+ 					<h2><p class="fragment">OpenStack</p> <p class="fragment">=</p> <p class="fragment">Rackspace</p> <p class="fragment">+</p> <p class="fragment">Nasa</p></h2>
+					</section>
+
+					<section>
+						<a href="https://www.rackspace.com/es-us"><h2>Rackspace</h2></a>
+						<h4 class="fragment"> 2005 (IaaS & SaaS)</h4>
+						<a class="fragment" href="http://blog.rackspace.com/introduction-to-object-storage/">Object Store</a>
+						<br>
+						<p class="fragment">Sistema de almacenamiento de objetos y ficheros distribuido accesible via API en lugar de OS</p>
+						<p class="fragment">(Swift)</p>
+					</section>
+
+					<section>
+						<h2>Nasa</h2>
+						<br>
+						<a class="fragment" href="https://open.nasa.gov/blog/nebula-nasa-and-openstack/"><p>Nebula Cloud Computing Platform (2008)</p></a>
+						<br>
+						<p class="fragment">(Computer Nova Controller)</p>
+					</section>
+
+					<section>
+
+					<h2 class="fragment">La comunidad</h2>
+					<img width="550" height="200" src="openstack.jpeg">
+					<br>
+					<strong class="fragment"><a href="https://github.com/openstack">github.com/openstack</a></strong>
+					<br>
+					<small class="fragment"><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></small>
+					<br>
+					<h2 class="fragment"> > 90% python</h2>
+					</section>
+
+					<section>
+						<a href="https://www.openstack.org/software/kilo/"><img src="kilo-logo.png"></a>
+						<p class="fragment" >11th release 21-Jan-16 (release 2015.1.3)</p>
+						<p class="fragment" >400 new features</p>
+						<p class="fragment" >big data analysis and application infrastructure at scale</p>
+						<p class="fragment" >1492 developers by more than 169 organizations</p>
+					</section>
+
+					<section>
+						Estructura Básica
+					</section>
+
+					<section>
+						<img width="1100" height="600" src="openstack1.jpg">
+					</section>
+
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Función</th>
+									<th>AWS</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="fragment">
+									<td>Horizon</td>
+									<td>Web de administración</td>
+									<td>Portal de Amazon</td>
+								</tr>
+								<tr class="fragment">
+									<td>Nova</td>
+									<td>Gestión instancias</td>
+									<td>EC2</td>
+								</tr>
+								<tr class="fragment">
+									<td>Cinder</td>
+									<td>Almacenamiento volúmenes</td>
+									<td>EBS</td>
+								</tr>
+								<tr class="fragment">
+									<td>Keystone</td>
+									<td>Autenticaión</td>
+									<td>Cognito</td>
+								</tr>
+								<tr class="fragment">
+									<td>Swift</td>
+									<td>Almacenamiento global</td>
+									<td>S3</td>
+								</tr>
+								<tr class="fragment">
+									<td>Glance</td>
+									<td>Gestión de imágenes</td>
+									<td>VM I/O</td>
+								</tr>
+								<tr class="fragment">
+									<td>Neutron</td>
+									<td>Gestión de redes</td>
+									<td>VPC</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+
+					<section>
+						<a href="http://docs.openstack.org/developer/horizon/"><h3>Horizon</h3></a>
+						<p>Implementación de Canonical de la interfaz de control web escrita en Django</p>
+						<p>Ofrece la interfaz para todo el resto de componentes</p>
+
+						<a href="https://www.stackops.com/es/openstack-horizon/"><p>Alternativa: StackOps Portal</p></a>
+					</section>
+
+					<section data-background="horizon.png">
+
+					</section>
+
+					<section>
+						<a href="http://docs.openstack.org/developer/nova/"><h3>Nova</h3></a>
+						<img width="200" height="200" src="nova.png">
+						<p>Potencia de computación escalable, bajo demanda y a medida.Motor de OpenStack</p>
+						<p>Gestiona los recursos reales del hardware para las instancias.</p>
+						<a href="http://docs.openstack.org/kilo/config-reference/content/section_compute-hypervisors.html"><p>Hipervisores</p></a>
+						<p>Compatible con muchos tipos de hipervisores,  KVM, LXC, QUEMU, VMware, etc..</p>
+					</section>
+
+					<section>
+						<a href="http://docs.openstack.org/developer/cinder/"><h3>Cinder</h3></a>
+						<h4>Block Storage As A Service</h4>
+						<p>Almacenamiento persistente de datos de las máquinas virtuales</p>
+					</section>
+
+					<section>
+						<img width="600" height="500" src="nova-cinder.png">
+					</section>
+
+					<section>
+						<a href="http://docs.openstack.org/developer/glance/"><h3>Glance</h3></a>
+						<img src="glance.png">
+						<p>Almacenamiento y gestión de las imágenes de las máquinas virtuales.</p>
+
+					</section>
+
+					<section>
+						<img src="glance2.png">
+					</section>
+
+					<section>
+						<a href="http://docs.openstack.org/developer/swift/"><h3>Swift</h3></a>
+						<h4>Object Storage</h4>
+						<p>Almacenamiento redundante y escalable, asegura la replicación e integridad de los datos en el cluster.</p>
+					</section>
+
+					<section>
+						<a href="http://shop.oreilly.com/product/0636920033288.do"><img width="300" height="550" src="swift.png"></a>
+					</section>
+
+					<section data-background="total.jpg">
+					</section>
+
+
+					<section>
+						<h3>Hardware</h3>
+					</section>
+
+					<section>
+						Se puede realizar en un solo equipo para aprender.
+						<a href="https://www.rdoproject.org/install/quickstart/">
+							<img src="rdo.png">
+						</a>
+						<p>PackStack Quickstart</p>
+					</section>
+
+
+					<section>
+						HP uno de los principales financiadores del proyecto.
+						<br>
+						<br>
+						<a href="https://www.youtube.com/watch?v=iLkE7h0rbFo" >Ejemplo</a>
+					</section>
+
+				<section style="font-size: 25px;">
+					<table class="fragment">
+						<thead >
+							<tr>
+								<th>Función</th>
+								<th>Cantidad</th>
+								<th>Servidor</th>
+								<th>Procesador</th>
+								<th>Almacenamiento</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="fragment">
+								<td>Seed</td>
+								<td>1</td>
+								<td>DL360 Gen9</td>
+								<td>Intel Xeon 1x6 core 2.4Gh< 32GB</td>
+								<td>2x2TB 7.2k SAS</td>
+							</tr>
+							<tr class="fragment">
+								<td>UnderCloud</td>
+								<td>1</td>
+								<td>DL360 Gen9</td>
+								<td>Intel Xeon 2x6 core 2.4Gh< 64GB</td>
+								<td>4x600GB 15k SAS</td>
+							</tr>
+							<tr class="fragment">
+								<td>Nova, Horizon, Glance, Cinder Services</td>
+								<td>3</td>
+								<td>DL360 Gen9</td>
+								<td>Intel Xeon 2x12 core 2.6Gh< 256GB</td>
+								<td>4x600GB 15k SAS</td>
+							</tr>
+							<tr class="fragment">
+								<td>Compute (run VM and ephemeral storage)</td>
+								<td>4</td>
+								<td>DL360 Gen9</td>
+								<td>Intel Xeon 2x18 core 2.3Gh< 256GB</td>
+								<td>4x1.2TB 10k SAS</td>
+							</tr>
+							<tr class="fragment">
+								<td>Swift</td>
+								<td>2</td>
+								<td>DL380 Gen9</td>
+								<td>Intel Xeon 2x12 core 2.6Gh< 64GB</td>
+								<td>2x600GB 15k + 13x6TB 7.2k SAS</td>
+							</tr>
+							<tr class="fragment">
+								<td>Cinder</td>
+								<td>3</td>
+								<td>DL380 Gen9</td>
+								<td>Intel Xeon 1x6 core 3.4Gh< 32GB</td>
+								<td>12x1.2TB 10k SAS</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+
+
+
+
+				</section>
+
+
+				<!--Documentación y manuales oficiales-->
+				<section>
+
+					<section>
+						<h2>Documentación y recursos</h2>
+						<h4>All about Open Stack</h4>
+					</section>
+
+					<section>
+
+						<a href="http://www.openstack.org/">
+							<img src="logo.png"></a>
+						<a href="http://docs.openstack.org/"><img src="logo.png"></a>
+
+					</section>
+
+					<section>
+
+						<h3>Blog y revista oficial</h3>
+
+						<a href="http://www.openstack.org/blog/">
+							<img width="800" height="238" src="blog.png" alt="Down arrow">
+						</a>
+
+						<a href="http://superuser.openstack.org/">
+							<img width="800" height="150" src="superuser.png" alt="Down arrow">
+						</a>
+
+						<a href="https://ask.openstack.org/en/questions/"> Ask
+					 	</a>
+
+
+					</section>
+
+
+					<section>
+					  <p>Libros oficiales</p>
+						<a href="http://docs.openstack.org/ops/" class="fragment">
+							<img width="278" height="338" src="operations.jpeg" alt="Down arrow">
+						</a>
+						<a href="http://docs.openstack.org/arch/" class="fragment">
+							<img width="278" height="338" src="arquitecture.png" alt="Down arrow">
+						</a>
+						<a href="http://docs.openstack.org/sec/" class="fragment">
+							<img width="278" height="338" src="libro_seguridad.jpg" alt="Down arrow">
+						</a>
+					</section>
+
+
+					<section>
+						<h2>Bibliografía extra</h2>
+
+							<a href="https://www.packtpub.com/virtualization-and-cloud/openstack-cloud-computing-cookbook" class="fragment">
+							 <img width="178" height="238" src="libro2.jpeg" alt="Down arrow">
+							</a>
+							<a href="https://www.packtpub.com/virtualization-and-cloud/openstack-essentials-second-edition" class="fragment">
+								<img width="178" height="238" src="libro3.png" alt="Down arrow">
+							</a>
+							<a href="https://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=10&ved=0ahUKEwisktqD9oPNAhXEuBQKHQEZDE4QFghkMAk&url=https%3A%2F%2Fpython-tips.googlecode.com%2Ffiles%2FDeploying.OpenStack.Jul.2011.pdf&usg=AFQjCNE6-aDcdQaMrY9HmUHIhf2jpCDsrQ&sig2=ivnrEwO82kTJNjbQXIGV7Q&cad=rja" class="fragment">
+								<img width="178" height="238" src="libro4.jpeg" alt="Down arrow">
+							</a>
+							<a href="https://www.packtpub.com/virtualization-and-cloud/learning-openstack" class="fragment">
+								<img width="178" height="238" src="learningos.png" alt="Down arrow">
+							</a>
+
+							<a href="https://www.safaribooksonline.com/library/view/openstack-in-action/9781617292163/" class="fragment">
+								<img width="178" height="238" src="360h.jpeg" alt="Down arrow">
+							</a>
+
+							<a href="https://www.packtpub.com/all/?search=open+stack&offset=&rows=12&sort=" class="fragment">PacktPub</a>
+							<br>
+							<a href="https://www.safaribooksonline.com/search/?query=open+stack" class="fragment">Safari</a>
+
+					</section>
+
+
+					<section>
+						<h3>meetup oficial</h3>
+						<a href="http://www.meetup.com/es-ES/openstack/?chapter_analytics_code=UA-49018576-2">
+							<img src="meetup.png">
+						</a>
+					</section>
+
+					<section>
+						(inactivo desde 2014)
+						https://twitter.com/openstackspain
+						http://www.meetup.com/es-ES/OpenStack-Spain/
+
+					</section>
+
+					<section>
+						<a href="https://www.stackops.com/es/"><img src="stackops.png"></a>
+						<br>
+						<a href="https://twitter.com/stackops">@stackops</a>
+						<p>Certificaciones a través de <a href="https://www.mirantis.com/">Mirantis<a></p>
+					</section>
+
+
+					<section>
+						<h3>¿Y en Granada?</h3>
+						<img src="osl.png">
+						<br>
+					</section>
+					<section>
+						<img width="800" height="600" src="img_equipos_1.jpg">
+					</section>
+					<section>
+						<img width="600" height="600" src="img_equipos_2.jpg">
+					</section>
+
+					<!--Paréntesis con la instalación en el insti -->
+					<section>
+						<h4>IES Gonzalo Nazareno.</h4>
+						<p>Dos Hermanas - Sevilla </p>
+						<p>2011-2012</p>
+						<p>2013 OpenStack Grizzly (2013.1)</p>
+					</section>
+
+
+					<section>
+						<a href="https://github.com/oslugr/oslstack"><h1>oslstack</h1></a>
+						<p><strong>github.com/oslugr/oslstack</strong><p>
+					</section>
+
+				</section>
+
+
+
+
+
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
