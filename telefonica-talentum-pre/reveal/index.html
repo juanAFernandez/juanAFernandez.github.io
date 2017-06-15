@@ -1,0 +1,481 @@
+<!doctype html>
+
+<!-- To run: > node plugin/notes-server/  inside of reveal folder.-->
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>SMS</title>
+
+		<meta name="SMS">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+					.spinner {
+			  margin: 100px auto;
+			  width: 40px;
+			  height: 40px;
+			  position: relative;
+			}
+
+			.cube1, .cube2 {
+			  background-color: #333;
+			  width: 15px;
+			  height: 15px;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+
+			  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+			  animation: sk-cubemove 1.8s infinite ease-in-out;
+			}
+
+			.cube2 {
+			  -webkit-animation-delay: -0.9s;
+			  animation-delay: -0.9s;
+			}
+
+			@-webkit-keyframes sk-cubemove {
+			  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+			  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+			  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+			  100% { -webkit-transform: rotate(-360deg) }
+			}
+
+			@keyframes sk-cubemove {
+			  25% {
+			    transform: translateX(42px) rotate(-90deg) scale(0.5);
+			    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+			  } 50% {
+			    transform: translateX(42px) translateY(42px) rotate(-179deg);
+			    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+			  } 50.1% {
+			    transform: translateX(42px) translateY(42px) rotate(-180deg);
+			    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+			  } 75% {
+			    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+			    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+			  } 100% {
+			    transform: rotate(-360deg);
+			    -webkit-transform: rotate(-360deg);
+			  }
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<!-- Slide inicial -->
+				<section data-background-video="images/prueba.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h1 style="color: gray; ">SMS</h1>
+							<p style="color: gray; ">Students Management System</p>
+							<small>Juan A. Fernández</small>
+						</div>
+
+					<aside class="notes">
+        				Presentación: Nombre, estudiante de informática aquí en la etsiit.
+
+
+						<h3>
+						Una vez introducidos en la primera revolución de la educación con las TICS en las aulas y sistemas
+						de uso masivo como MOODLE
+        				Bajo nuestra experiencia en centros de la comarca.
+							</h3>
+
+    				</aside>
+
+				</section>
+
+				<section>
+					<p>Detectamos una brecha digital en la <strong>gestión</strong> de centros educativos.</p>
+					<aside class="notes">
+						INICIO: ¿DE QUÉ ESTAMOS HABLANDO?
+						FINAL: los problemas se atacan cuando aparecen y requieren tiempo para su análisis.
+					</aside>
+				</section>
+
+				<section>
+						<p >Cientos de <span class="fragment highlight-red">procesos</span> realizados en papel.</p>
+						<p class="fragment fragment fade-up">Análisis de datos <span class="fragment highlight-red">lentos</span> (semi-automáticos) y <span class="fragment highlight-red">tediosos</span>.</p>
+						<p class="fragment fragment fade-up">Comunicaciones <span class="fragment highlight-red">lentas.</span></p>
+						<p class="fragment fragment fade-up">Se hace muy complejo el <span class="fragment highlight-red">seguimiento manual </span> de los estudiantes.</p>
+						<p class="fragment fragment fade-up">Gerencia <span class="fragment highlight-red">reactiva.</span></p>
+
+
+				</section>
+
+				<section>
+					<p>Todos estos problemas alejan al personal docente de su principal labor y hacen muy difícil controlar:  </p>
+					<ul>
+						<li class="fragment"><p>Calidad de la enseñanza.</p></li>
+						<li class="fragment"><p>Progreso individualizado de los estudiantes.</p></li>
+						<li class="fragment"><p>Abandono y abuso escolar.</p></li>
+						<li class="fragment"><p>Integración.</p></li>
+						<li class="fragment"><p>Atención a la diversidad.</p></li>
+					</ul>
+					<p class="fragment">...</p>
+
+
+					<aside class="notes">
+						FINAL De todas estas cuestiones SURGE LA NECESIDAD DE CREAR...
+					</aside>
+
+				</section>
+
+				<section>
+					<h3>Un Agilizador de procesos para centros docentes</h3>
+					<br>
+					<h2 class="fragment">con <strong>esteroides</strong></h2>
+					<br>
+					<br>
+					<small class="fragment">La idea de software a medida convertida en un proyecto <strong>Open Source.</strong></small>
+				</section>
+
+
+
+
+				<section> <!-- El antes -->
+					<img width="650" height="450" data-src="https://media.giphy.com/media/ANbD1CCdA3iI8/giphy.gif" alt="Up arrow">
+
+					<aside class="notes">
+						INICIO: Os preguntaréis que quiere decir esto.
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<p>Give me an example!</p>
+
+						<aside class="notes">
+							INICIO: Es solo uno de las DECENAS de procesos que podemos aliviar y de los cuales sacar <strong>VALOR DE NEGOCIO.</strong>
+						</aside>
+
+					</section>
+
+					<section>
+						<img width="700" height="500" data-src="images/example/1.png" alt="Up arrow">
+
+						<aside class="notes">
+							INICIO: Esta es la representación de un grupo de estudiantes que inicia curso en un centro,
+							GRIS: su perfil de <strong>rendimiento escolar</strong>, inicialmente a cero.
+						</aside>
+
+					</section>
+
+					<section>
+						<img width="700" height="500" data-src="images/example/3.png" alt="Up arrow">
+						<aside class="notes">
+							TODOS LOS PERFILES EVOLUCIONAN CORRECTAMENTE DURANTES LOS PRIMEROS DÍAS
+						</aside>
+					</section>
+
+					<section>
+						<img width="700" height="500" data-src="images/example/4.png" alt="Up arrow">
+
+						<aside class="notes">
+							ASISTENCIA: + retrasos y justificacion + vestuario
+							EVALUACIONES: según la nueva ley a espera de consenso también se evalua por
+							<strong>COMPETENCIAS</strong> además de por contenidos.
+							Bajo la experiencia en centros donde lo están implantando se vuelve impracticable
+							<string>sin un sistema como el nuestro. AHORRA MUCHÍSIMO TIEMPO y es más cómodo
+							para el profesor.</string>
+						</aside>
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/2.png" alt="Up arrow">
+						<aside class="notes">
+							Sistema para CORRER EN LA NUBE, no es necesario personal con conocimientos
+							ni <strong>hardware dedicado</strong>.
+						</aside>
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/5.png" alt="Up arrow">
+
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/6.png" alt="Up arrow">
+
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/7.png" alt="Up arrow">
+						<aside class="notes">
+							<h1>SE DETECT bAJO RENDIMIENTO EN PERFILES</H1>
+							<h1>FALTAS DE RESPETO</h1>
+							<h1>CALIFICACIONES NEGATIVAS</h1>
+							<h1>FALTAS DE ASISTENCIA</h1>
+					</aside>
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/8.png" alt="Up arrow">
+						<aside class="notes">
+							INFORMES CONNOTACIONES NEGATIVAS O POSITIVAS QUE EL SISTEMA DETECTA.
+						</aside>
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/9.png" alt="Up arrow">
+						<aside class="notes">
+						<h1>SE HA DEMOSTRADO QUE EL PROBLEMA SE EXPANDE: LA CONDUNTA SE REFLEJA EN COMPAÑEROS</h1>
+							</aside>
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/10.png" alt="Up arrow">
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/11.png" alt="Up arrow">
+						<aside class="notes">
+							El responsable asignado recibirá
+							unos <strong>informes</strong> que el sistema le proporcionará con los que poder
+							modificar su clase siguiendo las recomendaciones del sistema o no.
+						</aside>
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/12.png" alt="Up arrow">
+						<aside class="notes">
+						<h1>uNA SIMPLE MEDIDA: RECOLOCACIÓN</h1>
+						<h4>Informe padres, refuerzo lectivo, etc..</h4>
+							</aside>
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/13.png" alt="Up arrow">
+					</section>
+					<section>
+						<img width="700" height="500" data-src="images/example/14.png" alt="Up arrow">
+						<aside class="notes">
+							FIN: Esto es <strong>solo uno</strong> de todos los procesos sensibles que podemos
+							<strong>NO SOLO AGILIZAR SINO TAMBIÉN OBTENER VALOR DE NEGÓCIO CON SU ANÁLISIS.</strong>
+							En nuestro caso: mejorar la calidad del sistema para todos los estudiantes.
+						</aside>
+					</section>
+
+				</section>
+
+
+				<section> <!-- Después -->
+					<img width="900" height="500" data-src="https://media.giphy.com/media/e3C4pNKkr9rji/giphy.gif" alt="Up arrow">
+					<aside class="notes">
+							<h1>Si aún esto no fuera suficiente para convenceos...</h1>
+						</aside>
+				</section>
+
+
+
+
+				<section>
+					<h3>Soluciones previas</h3>
+
+						<br>
+
+						<p class="fragment">Privativas : <span class="fragment">caras.</span></p>
+						<p class="fragment">Diseños pobres : <span class="fragment">no responsive.</span></p>
+						<p class="fragment">Dependientes de la plataforma.</p>
+						<p class="fragment">No orientadas al análisis: solo funcionalidad.</p>
+						<p class="fragment">No cubren las necesidades reales y prácticas de cada centro.</p>
+						<p class="fragment">Código cerrado: <span class="fragment">no personalizable ni extensible.</span></p>
+						<p class="fragment">Sin conexión a las diferentes bases de datos por región.</p>
+						<aside class="notes">
+							COMO EL SISTEMA DE GESTIÓN DE EDUCACIÓN ANDALUZ <strong>SENECA</strong>
+						</aside>
+				</section>
+
+
+
+
+				<section>
+					<h3>Nuestra <span class="fragment highlight-red">solución</span></h3>
+					<br>
+					<br>
+					<small>
+						<ul>
+							<li class="fragment">Sistema centralizado.</li>
+							<li class="fragment">Basado en web, accesible.</li>
+							<li class="fragment">Módulos ajustables a medida.</li>
+							<li class="fragment">Pensado para correr la nube.</li>
+							<li class="fragment">Alto rendimiento.</li>
+							<li class="fragment">Open Source.</li>
+						</ul>
+					</small>
+					<br>
+					<br>
+					<small class="fragment"> que permitirá:</small>
+					<br>
+					<small>
+						<ul >
+							<li class="fragment">Seguimiento de <strong>perfiles</strong>.</li>
+							<li class="fragment">Optimización de <strong>recursos</strong> (espacios y personas).</li>
+							<li class="fragment">Ayudar a la toma de decisiones mediante análisis inteligente de <strong>datos</strong>.</li>
+							<li class="fragment">Mejorar del <strong>rendimiento</strong> estudiantil.</li>
+							<li class="fragment"><strong>Detección temprana</strong> y actuación preventiva basada en la experiencia.</li>
+							<li class="fragment">Adaptarse a las <strong>necesidades</strong> de cada centro.</li>
+							<li class="fragment">Conexión <strong>flexible</strong> a sistemas regionales.</li>
+						</ul>
+					</small>
+
+					<aside class="notes">
+							<h1>FINAL: ¿Existe mercado para un producto como este?</h1>
+					</aside>
+
+				</section>
+
+
+
+
+				<section>
+
+					<h4>Clientes potenciales en <strong>Andalucía</strong></h4>
+					<small class="fragment" >Centros Docentes Privados no Universitarios</small>
+					<table class="fragment fragment fade-up">
+						<thead>
+							<tr>
+								<th><small>Ciudad</small></th>
+								<th><small>C. Privados</small></th>
+								<th><small>Concertados</small></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><small>Granada</small></td>
+								<td><small>237</small></td>
+								<td><small>81</small></td>
+							</tr>
+							<tr>
+								<td><small>Almería</small></td>
+								<td><small>203</small></td>
+								<td><small>28</small></td>
+							</tr>
+							<tr>
+								<td><small>Málaga</small></td>
+								<td><small>475</small></td>
+								<td><small>95</small></td>
+							</tr>
+							<tr>
+								<td><small>Jaén</small></td>
+								<td><small>140</small></td>
+								<td><small>43</small></td>
+							</tr>
+							<tr>
+								<td><small>Córdoba</small></td>
+								<td><small>294</small></td>
+								<td><small>79</small></td>
+							</tr>
+							<tr>
+								<td><small>Sevilla</small></td>
+								<td><small>709</small></td>
+								<td><small>137</small></td>
+							</tr>
+							<tr>
+								<td><small>Huelva</small></td>
+								<td><small>120</small></td>
+								<td><small>33</small></td>
+							</tr>
+							<tr>
+								<td><small>Cádiz</small></td>
+								<td><small>258</small></td>
+								<td><small>97</small></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<small><a class="fragment" href="https://www.educacion.gob.es/centros/home.do">gob.es</a></small>
+					<aside class="notes">
+							<h1>2436 - 593</h1>
+					</aside>
+				</section>
+
+				<section>
+					<h2 class="fragment fade-out">5%</h2> <h1 class="fragment"> <strong>100</strong> clientes solo en Andalucía </h1>
+					<aside class="notes">
+						<h3>Si pensamos solo en un 5% de estos.</h3>
+						<h3>FINAL: A los que gracias a un sistema como este podríamos introducirlos</h3>
+					</aside>
+				</section>
+
+
+				<section>
+					La siguiente <strong>revolución</strong> en la digitalización de la educación.
+				</section>
+
+
+				<section>
+					<p>Bajo un proyecto <strong>Open Source</strong> con un modelo de negocio basado en la
+					<strong>personalización</strong>, <strong>despliegue</strong> y <strong>soporte</strong>.</p>
+
+					<aside class="notes">
+							<h1>FINAL: Muchísimas gracias, alguna pregunta?  -> </h1>
+					</aside>
+				</section>
+
+				<!-- FINAL -->
+				<section data-background-video="images/prueba.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h1 style="color: gray; ">SMS</h1>
+							<small style="color: gray; ">La siguiente <strong>revolución</strong> en la digitalización de la educación.</small>
+						</div>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'socket.io/socket.io.js', async: true },
+        			{ src: 'plugin/notes-server/client.js', async: true }				]
+			});
+
+		</script>
+
+	</body>
+</html>
